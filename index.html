@@ -3,310 +3,70 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ThrottleSeeds Store</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+<title>ThrottleSeeds - Premium Cannabis Genetics</title>
 
-  /* Cannabis leaf pattern placeholder */
-  body {
-    margin: 0;
-    background: #000 url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cannabis_icon.svg/1024px-Cannabis_icon.svg.png') repeat;
-    background-size: 60px 60px;
-    font-family: 'Oswald', sans-serif;
-    color: #fff;
-    text-align: center;
-    padding: 30px 10px;
-  }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@600&display=swap" rel="stylesheet" />
 
-  header {
-    margin-bottom: 40px;
-  }
-
-  #avatar {
-    width: 180px;
-    border: 4px solid orange;
-    border-radius: 16px;
-    box-shadow: 0 0 15px orange;
-    transition: transform 0.3s ease;
-  }
-
-  #avatar:hover {
-    transform: scale(1.1) rotate(5deg);
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-top: 15px;
-    color: orange;
-    letter-spacing: 4px;
-    user-select: none;
-  }
-
-  p.subtitle {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 50px;
-    color: #f57c00;
-  }
-
-  .strain-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .strain-card {
-    background: #111;
-    border: 3px solid orange;
-    border-radius: 18px;
-    width: 260px;
-    box-shadow: 0 0 12px orange;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    color: white;
-    text-align: left;
-  }
-
-  .strain-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px orange;
-  }
-
-  .strain-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-bottom: 3px solid orange;
-    filter: drop-shadow(0 0 3px orange);
-  }
-
-  .strain-content {
-    padding: 15px 18px;
-  }
-
-  .strain-content h3 {
-    margin: 0 0 6px 0;
-    font-size: 1.4rem;
-    letter-spacing: 1.5px;
-  }
-
-  .strain-content p {
-    margin: 4px 0;
-    font-size: 1rem;
-  }
-
-  .strain-price {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-top: 8px;
-    color: #f57c00;
-  }
-
-  .strain-card button {
-    margin: 12px 0 10px 0;
-    width: 100%;
-    background: orange;
-    border: none;
-    padding: 12px 0;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 0 0 18px 18px;
-    cursor: pointer;
-    color: black;
-    transition: background 0.3s ease;
-  }
-
-  .strain-card button:hover {
-    background: #ffb74d;
-  }
-
-  /* Popup */
-  .overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    z-index: 999;
-  }
-
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    background: #111;
-    border: 3px solid orange;
-    padding: 30px 25px;
-    border-radius: 22px;
-    box-shadow: 0 0 35px orange;
-    width: 320px;
-    color: white;
-    font-size: 1.1rem;
-    text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.35s ease;
-    z-index: 1000;
-  }
-
-  .popup.show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .popup h2 {
-    color: orange;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-  }
-
-  .popup a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 22px;
-    background: orange;
-    color: black;
-    font-weight: 700;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-
-  .popup a:hover {
-    background: #ffb74d;
-  }
-
-  .popup button.close-btn {
-    margin-top: 25px;
-    background: transparent;
-    border: 2px solid orange;
-    color: orange;
-    padding: 10px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  .popup button.close-btn:hover {
-    background: orange;
-    color: black;
-  }
-  
-  /* Responsive */
-  @media (max-width: 700px) {
-    .strain-list {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .strain-card {
-      width: 90%;
-    }
-  }
-</style>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
 <header>
-  <!-- Placeholder for your book avatar -->
-  <img id="avatar" src="avatar-book.png" alt="Shocker OwnZ Avatar" />
-  <h1>ThrottleSeeds</h1>
+  <div class="logo-container">
+    <img src="images/avatar-placeholder.png" alt="Shocker OwnZ Avatar" class="avatar" />
+    <h1>ThrottleSeeds</h1>
+  </div>
   <p class="subtitle">Premium Cannabis Genetics — Direct to You</p>
 </header>
 
-<div class="strain-list">
-  <div class="strain-card" onclick="showPopup('9lb')">
-    <img src="placeholder-9lb.jpg" alt="9 Lb Hammer" />
-    <div class="strain-content">
-      <h3>9 Lb Hammer</h3>
-      <p>Jinxproof Genetics</p>
-      <p class="strain-price">$80 — 6-pack Regular Seeds</p>
-    </div>
-    <button>Order Now</button>
-  </div>
+<main>
+  <section class="strain-list">
+    <article class="strain-card" tabindex="0" role="button" aria-pressed="false" data-strain="9lb">
+      <img src="images/placeholder-9lb.jpg" alt="9 Lb Hammer" />
+      <div class="strain-info">
+        <h2>9 Lb Hammer</h2>
+        <p>Jinxproof Genetics</p>
+        <p class="price">$80 — 6-pack Regular Seeds</p>
+        <button class="order-btn" data-strain="9lb">Order Now</button>
+      </div>
+    </article>
 
-  <div class="strain-card" onclick="showPopup('rks')">
-    <img src="placeholder-rks.jpg" alt="RKS S1" />
-    <div class="strain-content">
-      <h3>RKS S1</h3>
-      <p>Copycat Genetics</p>
-      <p class="strain-price">$100 — 10-pack Feminized Seeds</p>
-    </div>
-    <button>Order Now</button>
-  </div>
+    <article class="strain-card" tabindex="0" role="button" aria-pressed="false" data-strain="rks">
+      <img src="images/placeholder-rks.jpg" alt="RKS S1" />
+      <div class="strain-info">
+        <h2>RKS S1</h2>
+        <p>Copycat Genetics</p>
+        <p class="price">$100 — 10-pack Feminized Seeds</p>
+        <button class="order-btn" data-strain="rks">Order Now</button>
+      </div>
+    </article>
 
-  <div class="strain-card" onclick="showPopup('queens')">
-    <img src="placeholder-queens.jpg" alt="Queens Revenge" />
-    <div class="strain-content">
-      <h3>Queens Revenge</h3>
-      <p>Copycat Genetics</p>
-      <p class="strain-price">$100 — 10-pack Feminized Seeds</p>
-    </div>
-    <button>Order Now</button>
+    <article class="strain-card" tabindex="0" role="button" aria-pressed="false" data-strain="queens">
+      <img src="images/placeholder-queens.jpg" alt="Queens Revenge" />
+      <div class="strain-info">
+        <h2>Queens Revenge</h2>
+        <p>Copycat Genetics</p>
+        <p class="price">$100 — 10-pack Feminized Seeds</p>
+        <button class="order-btn" data-strain="queens">Order Now</button>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close modal">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <p><strong>Pay via CashApp:</strong> <span class="cashapp-tag">$ShockerOwnZ</span></p>
+    <div id="qrCode" aria-label="CashApp QR Code placeholder"></div>
+    <p class="note"></p>
+    <a href="#" id="payLink" target="_blank" rel="noopener" class="pay-now-btn">Pay Now</a>
   </div>
 </div>
 
-<div class="overlay" id="overlay" onclick="closePopup()"></div>
-
-<div class="popup" id="popup">
-  <h2 id="popupTitle"></h2>
-  <p id="popupDescription"></p>
-  <p><strong>Pay via CashApp:</strong> <span style="color: orange;">$ShockerOwnZ</span></p>
-  <p><em id="popupNote"></em></p>
-  <a href="#" id="cashappLink" target="_blank">Pay Now</a>
-  <button class="close-btn" onclick="closePopup()">Close</button>
-</div>
-
-<script>
-  const cashTag = "ShockerOwnZ";
-
-  const strains = {
-    "9lb": {
-      title: "9 Lb Hammer",
-      description: "Price: $80 for 6-pack Regular Seeds (Jinxproof Genetics).",
-      note: "Include '9 Lb Hammer' in your payment memo.",
-      image: "placeholder-9lb.jpg"
-    },
-    "rks": {
-      title: "RKS S1",
-      description: "Price: $100 for 10-pack Feminized Seeds (Copycat Genetics).",
-      note: "Include 'RKS S1' in your payment memo.",
-      image: "placeholder-rks.jpg"
-    },
-    "queens": {
-      title: "Queens Revenge",
-      description: "Price: $100 for 10-pack Feminized Seeds (Copycat Genetics).",
-      note: "Include 'Queens Revenge' in your payment memo.",
-      image: "placeholder-queens.jpg"
-    }
-  };
-
-  const popup = document.getElementById('popup');
-  const overlay = document.getElementById('overlay');
-  const popupTitle = document.getElementById('popupTitle');
-  const popupDescription = document.getElementById('popupDescription');
-  const popupNote = document.getElementById('popupNote');
-  const cashappLink = document.getElementById('cashappLink');
-
-  function showPopup(strainKey) {
-    const strain = strains[strainKey];
-    popupTitle.textContent = strain.title;
-    popupDescription.textContent = strain.description;
-    popupNote.textContent = strain.note;
-    cashappLink.href = `https://cash.app/$${cashTag}`;
-    overlay.style.display = 'block';
-    popup.classList.add('show');
-  }
-
-  function closePopup() {
-    overlay.style.display = 'none';
-    popup.classList.remove('show');
-  }
-</script>
-
+<script src="scripts.js"></script>
 </body>
 </html>
